@@ -1,0 +1,55 @@
+**server,sata,api and client in one image- img-1
+*computer and server operator: img-2
+** req and res: img-3
+***different types of server: img-4
+server vs database: normally server rund different programs.among those programs,one is to bring data from database, whereas database manipulate and stores data.
+
+*how api connect between server and client:
+->two end e internet must.
+->client thk request <=> server thk response(ai duitar moddhe je connection ta hoa,sta akta interface jar name api,api er maddhome )
+client side: a software that runs in personal computer.
+
+*rest request: get,post,put/patch,delete-> img-6
+   similarly: crud: create,read,update,delete
+           ->->img-5,
+
+*request object: img-7
+*req.params: img-8
+*response object: img-9
+
+*node js:server site js runtime,(js library + a little c++) but not a programming language.
+it has many third party library. it is single threaded but asynchronous non-blocking
+img-10
+
+runtime environment: img-11
+*when to use node js: img-12,img-13
+*when not to use node js: img-14,
+**companies using node js: img-15
+
+##features of node js: img-16,17
+
+%%% express js:
+   *node js framework
+% nodejs vs expressjs:
+   *img-18
+% expressjs middleware: img-19,20,21
+
+%why expressjs: img-22
+
+=>database: a container filled with data which is electronicaly stored in a computer system. img-23
+
+=>dbms(database management system):img-24
+=> dbms architecture:img-25
+   =>3-tier architecture:img-26
+
+=> sql database:img-27 exm:MySQL  (tabular database)
+=> nosql database:img-28  exm:mongoDB (non-tabular database)
+
+*types of NoSQL database: img-29
+
+**sql vs nosql: img-30
+
+*mongoDB: img-31,32
+* visual look at the structure of mongoDB:img-33
+* advantage of mongoDB: img-34
+

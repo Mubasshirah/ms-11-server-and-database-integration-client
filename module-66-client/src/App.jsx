@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users,setUsers]=useState([]);
+useEffect(()=>{
+  fetch('http://localhost:5000/users')
+  .then(res=>res.json())
+  .then(data=>setUsers(data))
+},[]);
+const handleSubmit=event=>{
+  event.preventDefault();
+  const form=event.target;
+  const name=form.name.value;
+  const email=form.email.value;
+  const user={name,email};
+  console.log(user);
+  fetch('http://localhost:5000/users',{
+    method:'POST',
+    headers:{
+      'content-type':'application/json'
+    },
+    body:JSON.stringify(user)
 
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data)
+  const newUser=[...users,data];
+  setUsers(newUser);
+  form.reset();
+  })
+}
   return (
-    <>
+    
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Users management</h1>
+      <p>number of users: {users.length}</p>
+    {
+      users.map(user=><p key={user.id}>name:{user.name}  email:{user.email}</p>)
+    }
+    <form onSubmit={handleSubmit}>
+     <div><input type="text" name="name" id="" /></div> 
+     <div> <input type="email" name="email" id="" /></div>
+     <div> <input type="submit" value="submit" /></div>
+    </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      
+    
   )
 }
 

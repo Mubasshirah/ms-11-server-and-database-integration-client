@@ -53,3 +53,4 @@ runtime environment: img-11
 * visual look at the structure of mongoDB:img-33
 * advantage of mongoDB: img-34
 
+Summery of this module: a post request sending from client side to server side.
